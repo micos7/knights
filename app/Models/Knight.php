@@ -68,9 +68,9 @@ class Knight extends Model
     protected function virtues(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => ($this->attributes['courage'] + $this->attributes['justice'] + $this->attributes['mercy'] 
+            get: fn ($value) => round(($this->attributes['courage'] + $this->attributes['justice'] + $this->attributes['mercy'] 
             + $this->attributes['generosity'] + $this->attributes['faith'] + $this->attributes['nobility']
-            + $this->attributes['hope']) / 7,
+            + $this->attributes['hope']) / 7,2),
             set: fn ($value) => ($this->attributes['courage'] + $this->attributes['justice'] + $this->attributes['mercy'] 
             + $this->attributes['generosity'] + $this->attributes['faith'] + $this->attributes['nobility']
             + $this->attributes['hope']) / 7
